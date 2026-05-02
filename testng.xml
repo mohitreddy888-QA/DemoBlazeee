@@ -1,0 +1,13 @@
+<suite name="Suite" parallel="tests" thread-count="2">
+
+    <listeners>
+        <listener class-name="DemoBlaze.utilities.TestListener"/>
+    </listeners>
+
+    <test name="DemoBlaze Tests">
+        <classes>
+            <class name="base.AddProductTest"/>
+        </classes>
+    </test>
+
+</suite>
