@@ -17,7 +17,7 @@ public class Cart_page {
         this.wait = wait;
     }
     By CartLoc = By.id("cartur");
-    By SonyMobileTable = By.xpath("//table[@class = 'table table-bordered table-hover table-striped']/tbody/tr");
+    By CartTable = By.xpath("//table[@class = 'table table-bordered table-hover table-striped']/tbody/tr");
     By PlaceorderBtn = By.xpath("//button[text() = 'Place Order']");
 
     public void clickCartLoc(){
@@ -25,11 +25,22 @@ public class Cart_page {
     }
 
 
-    public boolean isValuePresent(String value) {
-        List<WebElement> rows = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(SonyMobileTable));
+    public boolean isPhonePresent(String value) {
+        List<WebElement> rows = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(CartTable));
         for (WebElement row : rows) {
             if (row.getText().contains(value)) {
                 System.out.println("Your mobile is added in cart");
+                return true;
+            }
+
+        }
+        return false;
+    }
+    public boolean isLaptopPresent(String value) {
+        List<WebElement> rows = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(CartTable));
+        for (WebElement row : rows) {
+            if (row.getText().contains(value)) {
+                System.out.println("Your Laptop is added in cart");
                 return true;
             }
 

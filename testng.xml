@@ -4,9 +4,15 @@
         <listener class-name="DemoBlaze.utilities.TestListener"/>
     </listeners>
 
-    <test name="DemoBlaze Tests">
+    <test name="DemoBlaze Phone Tests">
         <classes>
-            <class name="base.AddProductTest"/>
+            <class name="ProductTests.AddLaptopTest"/>
+        </classes>
+    </test>
+
+    <test name="DemoBlaze Laptop Tests">
+        <classes>
+            <class name="ProductTests.AddPhoneTest"/>
         </classes>
     </test>
 

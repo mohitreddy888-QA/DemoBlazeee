@@ -18,13 +18,21 @@ public class Home_page {
     By phones = By.xpath("//a[contains(text(),'Phones')]");
     By sony = By.xpath("//a[contains(text(),'Sony xperia z5')]");
     By addToCartButton = By.xpath("//a[contains(text(),'Add to cart')]");
+    By LaptopLoc = By.xpath("//a[contains(text(),'Laptops')]");
+    By Dell = By.xpath("//a[contains(text(),'2017 Dell 15.6 Inch')]");
 
     public void clickPhones() {
         wait.until(ExpectedConditions.elementToBeClickable(phones)).click();
     }
+    public void ClickLaptops(){
+        wait.until(ExpectedConditions.elementToBeClickable(LaptopLoc)).click();
+    }
 
     public void clickSony() {
         wait.until(ExpectedConditions.elementToBeClickable(sony)).click();
+    }
+    public void clickDell() {
+        wait.until(ExpectedConditions.elementToBeClickable(Dell)).click();
     }
 
     public void addToCart() {

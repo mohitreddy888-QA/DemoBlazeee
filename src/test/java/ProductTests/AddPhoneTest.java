@@ -1,17 +1,18 @@
-package base;
+package ProductTests;
 
 
 import DemoBlaze.pages.Cart_page;
 import DemoBlaze.pages.Home_page;
 import DemoBlaze.pages.PlaceOrder_page;
 import DemoBlaze.utilities.TestDataProvider;
+import base.BaseTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import static DemoBlaze.utilities.TestUtil.prop;
 
-public class AddProductTest extends BaseTest {
-    @Test(dataProvider = "PlaceOrder_page", dataProviderClass = TestDataProvider.class, alwaysRun = true)
+public class AddPhoneTest extends BaseTest {
+    @Test(dataProvider = "PlaceOrder_page", dataProviderClass = TestDataProvider.class)
     public void test_homepage(String name, String country, String city,
                               String card, String month, String year) throws InterruptedException {
         System.out.println("Thread ID: " + Thread.currentThread().getId());
@@ -25,7 +26,7 @@ public class AddProductTest extends BaseTest {
 
         Cart_page cp = new Cart_page(driver.get(), wait.get());
         cp.clickCartLoc();
-        boolean result = cp.isValuePresent("Sony xperia z5");
+        boolean result = cp.isPhonePresent("Sony xperia z5");
         soft.assertTrue(result, "Product  found in cart");
         Thread.sleep(5000);
         cp.ClickPlaceOrderbtn();
